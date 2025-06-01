@@ -20,12 +20,10 @@ function transformStateWithClones(state, actions) {
         ...action.extraData,
       };
     }
-    result.push(currentState);
 
     if (action.type === 'clear') {
       currentState = {};
     }
-    result.push(currentState);
 
     if (action.type === 'removeProperties') {
       const newState = {
