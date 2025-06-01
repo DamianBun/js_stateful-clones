@@ -19,13 +19,13 @@ function transformStateWithClones(state, actions) {
         ...currentState,
         ...action.extraData,
       };
-      result.push(currentState);
     }
+    result.push(currentState);
 
     if (action.type === 'clear') {
       currentState = {};
-      result.push(currentState);
     }
+    result.push(currentState);
 
     if (action.type === 'removeProperties') {
       const newState = {
@@ -36,8 +36,8 @@ function transformStateWithClones(state, actions) {
         delete newState[key];
       }
       currentState = newState;
-      result.push(currentState);
     }
+    result.push(currentState);
   }
 
   return result;
